@@ -366,8 +366,9 @@ footer {
     gap: 10px;
   }
   nav .nav-links {
+    width: 100%;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 10px;
   }
   /* Header Content */
