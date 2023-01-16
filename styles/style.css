@@ -12,6 +12,7 @@
   --light-pale: #ff900e1a;
   --dark-1: #131313;
   --dark-2: #424242;
+  --dark-3: #727272;
   --primary: #ff900e;
 }
 
@@ -26,9 +27,13 @@ img {
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
+.mb-24 {
+  margin-bottom: 24px;
+}
 .mb-30 {
   margin-bottom: 30px;
 }
@@ -36,8 +41,14 @@ img {
   margin-bottom: 50px;
 }
 
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--dark-1);
+  line-height: 50px;
+}
 .description {
-  color: var(--dark-2);
+  color: var(--dark-3);
   line-height: 26px;
 }
 
@@ -47,19 +58,23 @@ img {
   padding: 20px 25px;
   font-size: 20px;
   font-weight: 600;
-  border: none;
+  border: 1px solid var(--primary);
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.5s all;
 }
 
 .btn-primary:hover {
   transform: translateY(-10px);
+  background-color: transparent;
+  color: var(--primary);
 }
 
 /* Header styles */
 header {
   background-color: var(--light-pale);
   min-height: 100vh;
+  padding: 50px 0;
 }
 /* Navigation Styles */
 nav {
@@ -105,15 +120,244 @@ nav .nav-links li a {
   }
 }
 
+/* Quick List Styles */
+.quick-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 50px;
+  margin: 100px 0;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.quick-list-title {
+  margin-bottom: 24px;
+}
+
+.quick-list-title span:first-child {
+  color: var(--dark-3);
+  font-weight: 500;
+}
+
+.quick-list-title span:last-child {
+  color: var(--primary);
+}
+
+/* Features styles */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  margin-bottom: 100px;
+}
+
+.features-image {
+  position: relative;
+}
+
+.features-image img {
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.features-image .highlight-span {
+  position: absolute;
+  bottom: -75px;
+  left: -75px;
+  background-color: var(--primary);
+  font-size: 45px;
+  color: white;
+  padding: 40px 45px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 5px;
+  line-height: 24px;
+}
+
+.features-image .highlight-span span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.features-title {
+  padding-left: 20px;
+  border-left: 5px solid var(--primary);
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature {
+  padding: 30px;
+}
+.feature-title {
+  margin-bottom: 10px;
+}
+
+/* Facts Styles */
+.facts {
+  margin: 200px 0;
+}
+
+.facts-list {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  border: 2px solid var(--primary);
+  padding: 50px;
+  border-radius: 10px;
+  transition: 0.5s all;
+  align-self: flex-start;
+}
+
+.fact img {
+  transition: 0.5s all;
+}
+
+.fact:hover {
+  background-color: var(--primary);
+  border-bottom: 6px solid var(--dark-2);
+  transform: translateY(-20px);
+}
+
+.fact:hover span {
+  color: white;
+}
+
+.fact:hover img {
+  background-color: white;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.fact img {
+  width: 50px;
+}
+
+.fact .fact-num {
+  font-size: 45px;
+  color: var(--dark-2);
+  font-weight: 600;
+}
+
+.fact .fact-title {
+  font-weight: 600;
+  color: var(--dark-3);
+  text-align: center;
+}
+
+/* Quote Styles */
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 100px 50px;
+  background: linear-gradient(to right, rgb(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../images/fixedbg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+.quote-text {
+  font-size: 40px;
+}
+.quote-text::before,
+.quote-text::after {
+  color: var(--primary);
+  font-family: "Font Awesome 5 Free";
+  font-size: 45px;
+}
+.quote-text::before {
+  content: "\f10d";
+}
+.quote-text::after {
+  content: "\f10e";
+}
+
+.quote-author {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.author-name {
+  font-size: 28px;
+}
+
+.author-title {
+  background-color: var(--primary);
+  padding: 5px 10px;
+}
+
+/* Sponsors Styles */
+.sponsors {
+  margin: 100px 0;
+}
+.sponsors-info {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.sponsors-images {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+}
+
+.sponsors-images img {
+  width: 100px;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.sponsors-images img:hover {
+  filter: grayscale(0);
+}
+
+/* footer styles */
+footer {
+  background-color: var(--light-pale);
+  text-align: center;
+  padding: 40px;
+  color: var(--dark-2);
+}
 /* media queries */
 @media screen and (max-width: 576px) {
   /* Global Styles */
+
   .container {
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .description {
     font-size: 14px;
   }
+
   /* Navigation */
   nav {
     flex-direction: column;
@@ -129,5 +373,57 @@ nav .nav-links li a {
   /* Header Content */
   .header-content-title {
     font-size: 45px;
+  }
+  /* Quick List Styles */
+  .quick-list {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  /* Features */
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .features-image .highlight-span {
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  .features-title {
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  .feature {
+    padding: 15px;
+  }
+  /* Facts */
+  .facts-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .fact {
+    padding: 20px;
+  }
+  /* Quote */
+  .quote {
+    padding: 100px 25px;
+  }
+  .quote-text {
+    font-size: 24px;
+  }
+  .quote-text::before,
+  .quote-text::after {
+    color: var(--primary);
+    font-family: "Font Awesome 5 Free";
+    font-size: 24px;
+  }
+
+  /* Sponsors */
+  .sponsors-images {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
   }
 }
