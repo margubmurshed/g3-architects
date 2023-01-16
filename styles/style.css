@@ -298,6 +298,7 @@ nav .nav-links li a {
 }
 
 .quote-author {
+  align-items: center;
   font-size: 18px;
   display: flex;
   flex-direction: column;
@@ -324,8 +325,7 @@ nav .nav-links li a {
 .sponsors-images {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  justify-content: space-around;
-  align-items: center;
+  justify-items: center;
   gap: 50px;
 }
 
@@ -378,6 +378,14 @@ footer {
   .quick-list {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+
+  .quick-list-info {
+    grid-row: 1;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
   }
   /* Features */
   .features {
